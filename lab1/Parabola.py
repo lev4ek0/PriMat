@@ -33,4 +33,4 @@ def parabola():
         else:
             X1 = X2
             X3 = U
-    return [(X1 + X3) / 2, counter1, counter2]
+    return {"Локальный минимум": (X1 + X3) / 2, "Количество итераций": counter1, "Количество вычислений": counter2}

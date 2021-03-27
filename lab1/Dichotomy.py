@@ -28,4 +28,4 @@ def dichotomy():
         else:
             A = X1
             B = X2
-    return [(A + B) / 2, counter1, counter2]
+    return {"Локальный минимум": (A + B) / 2, "Количество итераций": counter1, "Количество вычислений": counter2}

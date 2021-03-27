@@ -59,4 +59,4 @@ def brent():
             elif Yu <= Yw or v == x or v == w:
                 v = u
                 Yv = Yu
-    return [(A + B) / 2, counter1, counter2]
+    return {"Локальный минимум": (A + B) / 2, "Количество итераций": counter1, "Количество вычислений": counter2}

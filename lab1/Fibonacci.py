@@ -44,4 +44,4 @@ def fibonacci():
         A = X1
     else:
         B = X2
-    return [(A + B) / 2, counter1, counter2]
+    return {"Локальный минимум": (A + B) / 2, "Количество итераций": counter1, "Количество вычислений": counter2}
