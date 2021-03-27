@@ -2,13 +2,10 @@ import Const
 
 
 def parabol(x1, x2, x3):
-    if x1 > x2:
-        x1, x2 = x2, x1
-    if x2 > x3:
-        x2, x3 = x3, x2
-    if x1 > x3:
-        x1, x3 = x3, x1
-    return x2 - (pow((x2 - x1), 2) * (Const.f(x2) - Const.f(x3)) - pow((x2 - x3), 2) * (Const.f(x2) - Const.f(x1))) / (2 * ((x2 - x1) * (Const.f(x2) - Const.f(x3)) - (x2 - x3) * (Const.f(x2) - Const.f(x1))))
+    f1 = Const.f(x1)
+    f2 = Const.f(x2)
+    f3 = Const.f(x3)
+    return x2 - (pow((x2 - x1), 2) * (f2 - f3) - pow((x2 - x3), 2) * (f2 - f1)) / (2 * ((x2 - x1) * (f2 - f3) - (x2 - x3) * (f2 - f1)))
 
 
 def parabola():

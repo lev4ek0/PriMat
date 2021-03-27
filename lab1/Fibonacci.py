@@ -18,26 +18,30 @@ def fibonacci():
     A = Const.a
     B = Const.b
     counter1 = 0
-    counter2 = 0
+    counter2 = 2
     while True:
         counter1 += 1
-        if Const.f(X1) > Const.f(X2):
-            counter2 += 2
+        if Y1 > Y2:
             A = X1
             X1 = X2
             X2 = A + F(n - k - 1) / F(n - k) * (B - A)
             if k == n - 2:
                 break
             else:
+                Y1 = Y2
+                Y2 = Const.f(X2)
+                counter2 += 1
                 k += 1
         else:
-            counter2 += 2
             B = X2
             X2 = X1
             X1 = A + F(n - k - 2) / F(n - k) * (B - A)
             if k == n - 2:
                 break
             else:
+                Y2 = Y1
+                counter2 += 1
+                Y1 = Const.f(X1)
                 k += 1
     X2 = X1 + Const.e
     if Y1 >= Y2:

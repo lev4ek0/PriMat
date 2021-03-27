@@ -1,7 +1,19 @@
 import math
 import Const
-import Parabola
 import numpy
+
+
+def parabol(x1, x2, x3, f1, f2, f3):
+    if x1 > x2:
+        x1, x2 = x2, x1
+        f1, f2 = f2, f1
+    if x2 > x3:
+        x2, x3 = x3, x2
+        f2, f3 = f3, f2
+    if x1 > x3:
+        x1, x3 = x3, x1
+        f1, f3 = f3, f1
+    return x2 - (pow((x2 - x1), 2) * (f2 - f3) - pow((x2 - x3), 2) * (f2 - f1)) / (2 * ((x2 - x1) * (f2 - f3) - (x2 - x3) * (f2 - f1)))
 
 
 def brent():
@@ -17,14 +29,11 @@ def brent():
         counter1 += 1
         g = e
         e = d
-        flag = 0
         if x != w and w != v and x != v and Yx != Yw and Yw != Yv and Yx != Yv:
-            u = Parabola.parabol(x, w, v)
-            counter2 += 3
+            u = parabol(x, w, v, Yx, Yw, Yv)
             if A + Const.e < u < B - Const.e and abs(u - x) < g / 2:
                 d = abs(u - x)
-                flag = 1
-        if flag == 0:
+        else:
             if x < (B - A) / 2:
                 u = x + K * (B - x)
                 d = B - x
