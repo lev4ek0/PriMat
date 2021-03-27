@@ -2,11 +2,11 @@ import Const
 
 
 def x1(a1, b1):
-    return (a1 + b1) / 2 - Const.e / 2
+    return (a1 + b1) / 2 - Const.e / 3
 
 
 def x2(a1, b1):
-    return (a1 + b1) / 2 + Const.e / 2
+    return (a1 + b1) / 2 + Const.e / 3
 
 
 def dichotomy():
